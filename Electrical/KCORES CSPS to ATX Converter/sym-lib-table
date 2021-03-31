@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name KCORES_Converter_DCDC)(type Legacy)(uri ${KIPRJMOD}/Symbols/KCORES_Converter_DCDC.lib)(options "")(descr ""))
+  (lib (name KCORES_Power_Supervisor)(type Legacy)(uri ${KIPRJMOD}/Symbols/KCORES_Power_Supervisor.lib)(options "")(descr ""))
+)

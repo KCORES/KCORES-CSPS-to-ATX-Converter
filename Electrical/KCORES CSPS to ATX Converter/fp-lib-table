@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name KCORES_Connector_ATX_Power)(type KiCad)(uri ${KIPRJMOD}/Footprints/KCORES_Connector_ATX_Power.pretty)(options "")(descr ""))
+  (lib (name KCORES_Connector_CSPS)(type KiCad)(uri ${KIPRJMOD}/Footprints/KCORES_Connector_CSPS.pretty)(options "")(descr ""))
+  (lib (name KCORES_Converter_DCDC)(type KiCad)(uri ${KIPRJMOD}/Footprints/KCORES_Converter_DCDC.pretty)(options "")(descr ""))
+)
