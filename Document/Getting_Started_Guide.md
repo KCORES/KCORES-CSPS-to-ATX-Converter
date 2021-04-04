@@ -23,7 +23,7 @@
 
 ## 焊接一
 
-![](/Image/Getting_Started_Guide/Solid1.png)
+![](/Document/Image/Getting_Started_Guide/Solid1.png)
 
 - CSPS 连接器
 - 所有降压模块
@@ -36,7 +36,7 @@
 
 ## 焊接二
 
-![](/Image/Getting_Started_Guide/Solid2.png)
+![](/Document/Image/Getting_Started_Guide/Solid2.png)
 
 - ATX 控制电路
 - 测试 ATX 控制 IC
