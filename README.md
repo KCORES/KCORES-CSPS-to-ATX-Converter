@@ -1,11 +1,11 @@
 # KCORES-CSPS-to-ATX-Converter
 
-![KCORES CSPS to ATX Converter](Document\Image\Cover\Cover1.png)
+![KCORES CSPS to ATX Converter](Document/Image/Cover/Cover1.png)
 
 - 项目视频: [1元10瓦 垃圾佬的超级ATX电源-Bilibili](https://www.bilibili.com/video/BV12A411N7AG/)
 - KCORES 交流群: [826702309](https://jq.qq.com/?_wv=1027&k=jcr07ZYG)
 - KCORES 官方网站: [KCORES.com](https://kcores.com/)
-- 从零开始制作: [入门指南](Document\Getting_Started_Guide.md)
+- 从零开始制作: [入门指南](Document/Getting_Started_Guide.md)
 
 # Specification
 
@@ -28,14 +28,14 @@
 
 KCORES CSPS to ATX Converter 可以用于引脚特征如下图所示的电源
 
-![辨别 CSPS 电源](Document\Image\Cover\Distinguish_CSPS.jpg)
+![辨别 CSPS 电源](Document/Image/Cover/Distinguish_CSPS.jpg)
 
 目前已知 Hewlett Packard Enterprise 与 Huawei 大量生产过 CSPS.  
 不同厂家生产的 CSPS 可能外形略有不同, 但金手指必须与图示一致才可使用.  
 
 ## Getting Started Guide
 
-- [入门指南](Document\Getting_Started_Guide.md)
+- [入门指南](Document/Getting_Started_Guide.md)
 
 # LICENSE
 
