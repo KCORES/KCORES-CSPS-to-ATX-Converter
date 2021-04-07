@@ -2,7 +2,7 @@
 
 ![KCORES CSPS to ATX Converter](Document/Image/Cover/Cover1.png)
 
-- 项目视频: [1元10瓦 垃圾佬的超级ATX电源-Bilibili](https://www.bilibili.com/video/BV12A411N7AG/)
+- 项目视频: [1元10瓦 垃圾佬的超级ATX电源-Youtube](https://www.youtube.com/watch?v=Dy0Jgn7Dg4A)
 - KCORES 交流群: [826702309](https://jq.qq.com/?_wv=1027&k=jcr07ZYG)
 - KCORES 官方网站: [KCORES.com](https://kcores.com/)
 - 从零开始制作: [入门指南](Document/Getting_Started_Guide.md)
