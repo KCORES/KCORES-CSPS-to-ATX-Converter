@@ -19,6 +19,7 @@ class CSPS
 public:
   CSPS(byte CSPS_addr);
   CSPS(byte CSPS_addr, byte ROM_addr);
+  CSPS(byte CSPS_addr, byte ROM_addr, bool ENABLE_CHECKSUM);
 
   String getROM(byte addr, byte len);
 
@@ -114,6 +115,7 @@ public:
   };
 
 private:
+  bool _CSPS_READ_CHECKSUM;
   byte _CSPS_addr;
   byte _ROM_addr;
   byte readROM(byte dataAddr);
