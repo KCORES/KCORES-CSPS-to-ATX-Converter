@@ -27,21 +27,30 @@ sensor:
 
     sensors:
     - name: "Fan Speed"
-      accuracy_decimals: 1
+      accuracy_decimals: 0
+      unit_of_measurement: RPM
     - name: "Temp 1"
       accuracy_decimals: 1
+      unit_of_measurement: °C
     - name: "Temp 2"
       accuracy_decimals: 1
+      unit_of_measurement: °C
     - name: "Power Out"
-      accuracy_decimals: 1
+      accuracy_decimals: 0
+      unit_of_measurement: W
     - name: "Power In"
-      accuracy_decimals: 1
+      accuracy_decimals: 0
+      unit_of_measurement: W
     - name: "Current Out"
       accuracy_decimals: 1
+      unit_of_measurement: A
     - name: "Current In"
       accuracy_decimals: 1
+      unit_of_measurement: A
     - name: "Voltage Out"
       accuracy_decimals: 1
+      unit_of_measurement: V
     - name: "Voltage In"
       accuracy_decimals: 1
+      unit_of_measurement: V
 ```
