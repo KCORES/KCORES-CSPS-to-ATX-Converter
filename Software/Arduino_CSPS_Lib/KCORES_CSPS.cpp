@@ -14,6 +14,7 @@ CSPS::CSPS(byte CSPS_addr)
 {
   _CSPS_addr = CSPS_addr;
   _ROM_addr = CSPS_addr - 8;
+  _CSPS_READ_CHECKSUM = false;
   Wire.begin();
 }
 
@@ -21,6 +22,16 @@ CSPS::CSPS(byte CSPS_addr, byte ROM_addr)
 {
   _CSPS_addr = CSPS_addr;
   _ROM_addr = ROM_addr;
+  _CSPS_READ_CHECKSUM = false;
+  Wire.begin();
+}
+
+
+CSPS::CSPS(byte CSPS_addr, byte ROM_addr, bool ENABLE_CHECKSUM)
+{
+  _CSPS_addr = CSPS_addr;
+  _ROM_addr = ROM_addr;
+  _CSPS_READ_CHECKSUM = ENABLE_CHECKSUM;
   Wire.begin();
 }
 
@@ -44,6 +55,17 @@ byte CSPS::readROM(byte dataAddr)
   return rec;
 }
 
+// Calclate checksum read from PM BUS
+uint8_t checksum(uint32_t data) {
+    uint8_t cs = 0;
+    cs += ((data & 0xFF0000) >> 16);
+    cs += ((data & 0xFF00) >> 8);
+    cs += (data & 0xFF);
+
+    cs = ((0xFF - cs) + 1) & 0xFF;
+    return cs;
+}
+
 uint32_t CSPS::readCSPSword(byte dataAddr)
 {
   byte regCS = ((0xFF - (dataAddr + (_CSPS_addr << 1))) + 1) & 0xFF;
@@ -58,6 +80,20 @@ uint32_t CSPS::readCSPSword(byte dataAddr)
     rec = Wire.read();
     rec |= Wire.read() << 8;
     rec |= Wire.read() << 16;
+
+    if (_CSPS_READ_CHECKSUM) {
+      uint8_t cs = checksum(rec);
+
+      if (cs != 0) {
+        // Output error to serial
+        if (Serial) {
+          Serial.printf("CSPS::readCSPSword() Missmatch checksum. addr: 0x%02x, chk: 0x%02x\n", dataAddr, cs);
+        }
+      }
+
+      // Don't return checksum
+      return rec & 0x00FFFF;
+    }
     return rec;
   }
   else
