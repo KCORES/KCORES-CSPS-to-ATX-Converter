@@ -87,7 +87,10 @@ uint32_t CSPS::readCSPSword(byte dataAddr)
       if (cs != 0) {
         // Output error to serial
         if (Serial) {
-          Serial.printf("CSPS::readCSPSword() Missmatch checksum. addr: 0x%02x, chk: 0x%02x\n", dataAddr, cs);
+          char buf[70];
+
+          snprintf(buf, 70, "CSPS::readCSPSword() Missmatch checksum. addr: 0x%02x, chk: 0x%02x\r\n", dataAddr, cs);
+          Serial.print(buf);
         }
       }
 
