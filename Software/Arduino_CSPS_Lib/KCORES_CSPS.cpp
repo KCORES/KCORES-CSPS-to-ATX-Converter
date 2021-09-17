@@ -66,7 +66,8 @@ uint8_t checksum(uint32_t data) {
     return cs;
 }
 
-uint32_t CSPS::readCSPSword(byte dataAddr)
+// uint32_t to int32_t is safe for CSPS Word (3 bytes)
+int32_t CSPS::_readCSPSword(byte dataAddr)
 {
   byte regCS = ((0xFF - (dataAddr + (_CSPS_addr << 1))) + 1) & 0xFF;
   uint32_t rec = 0xFFFF;
@@ -94,6 +95,7 @@ uint32_t CSPS::readCSPSword(byte dataAddr)
           Serial.print(buf);
         }
 #endif
+        return -1;
       }
 
       // Don't return checksum
@@ -103,6 +105,20 @@ uint32_t CSPS::readCSPSword(byte dataAddr)
   }
   else
     return 0;
+}
+
+uint32_t CSPS::readCSPSword(byte dataAddr) {
+  // Re-try 3 times
+
+  for(int i = 0; i < 3; i++) {
+    int32_t data = _readCSPSword(dataAddr);
+
+    if (data != -1) {
+      return data;
+    }
+  }
+
+  return 0;
 }
 
 void CSPS::writeCSPSword(byte dataAddr, unsigned int data)
