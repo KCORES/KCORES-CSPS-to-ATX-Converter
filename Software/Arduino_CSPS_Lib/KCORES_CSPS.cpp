@@ -85,6 +85,7 @@ uint32_t CSPS::readCSPSword(byte dataAddr)
       uint8_t cs = checksum(rec);
 
       if (cs != 0) {
+#ifdef CSPS_ERROR_TO_SERIAL
         // Output error to serial
         if (Serial) {
           char buf[70];
@@ -92,6 +93,7 @@ uint32_t CSPS::readCSPSword(byte dataAddr)
           snprintf(buf, 70, "CSPS::readCSPSword() Missmatch checksum. addr: 0x%02x, chk: 0x%02x\r\n", dataAddr, cs);
           Serial.print(buf);
         }
+#endif
       }
 
       // Don't return checksum
