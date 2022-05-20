@@ -120,6 +120,7 @@ private:
   byte _ROM_addr;
   byte readROM(byte dataAddr);
 
+  int32_t _readCSPSword(byte dataAddr);
   uint32_t readCSPSword(byte dataAddr);
   void writeCSPSword(byte dataAddr, unsigned int data);
 };
