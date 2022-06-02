@@ -5,6 +5,8 @@
 ```yaml
 esphome:
   # 原先内容
+  libraries:
+    - Wire
   includes:
     - CSPS/main.hpp
     - CSPS/KCORES_CSPS.h
